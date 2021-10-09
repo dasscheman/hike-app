@@ -65,7 +65,7 @@ $config = [
     'params' => $params
 ];
 
-if (YII_ENV == 'dev') {
+if ($_ENV['YII_ENV'] == 'dev') {
     // configuration adjustments for 'dev' environment
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = [

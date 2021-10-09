@@ -1,4 +1,6 @@
 <?php
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__, '../.env');
+$dotenv->load();
 
 require_once(__DIR__.'/debug.php');
 $ip = require(__DIR__ . '/../config/ip_white_list.php');
@@ -35,7 +37,7 @@ $config = [
                 'sender' => ['noreply@hike-app.nl' => 'hike-app.nl'],
             ],
             'admins' => ['dasman'],
-            'debug' => YII_ENV == 'dev' || YII_ENV == 'test' ? false : false,
+            'debug' => $_ENV['YII_DEBUG'],
         ],
         'rbac' => 'dektrium\rbac\RbacWebModule',
         'gridview' =>  [
@@ -84,11 +86,11 @@ $config = [
             // send all mails to a file by default. You have to set
             // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.
-            'useFileTransport' => YII_ENV == 'dev' || YII_ENV == 'test' ? true : false,
+            'useFileTransport' => $_ENV['EMAIL_TO_FILE'] ,
             'transport' => require(__DIR__ . '/email.php')
         ],
         'log' => [
-            'traceLevel' => YII_DEBUG ? 3 : 0,
+            'traceLevel' => $_ENV['YII_DEBUG'] ? 3 : 0,
             'targets' => [
                 [
                     'class' => 'yii\log\FileTarget',
@@ -116,14 +118,13 @@ $config = [
     'params' => $params,
 ];
 
-if (YII_ENV == 'dev' || YII_ENV == 'test') {
+if ($_ENV['YII_ENV'] == 'dev' || $_ENV['YII_ENV'] == 'test') {
     // configuration adjustments for 'dev' environment
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
         'allowedIPs' => $ip,
     ];
-
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',

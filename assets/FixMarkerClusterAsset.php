@@ -26,7 +26,7 @@ class FixMarkerClusterAsset extends MarkerClusterAsset
     public function init()
     {
         $this->sourcePath = \Yii::getAlias('@bower').'/leaflet.markercluster/dist';
-        $this->js = YII_DEBUG ? ['leaflet.markercluster-src.js'] : ['leaflet.markercluster.js'];
+        $this->js = $_ENV['YII_END'] = 'dev' ? ['leaflet.markercluster-src.js'] : ['leaflet.markercluster.js'];
     }
 
 

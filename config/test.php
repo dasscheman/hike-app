@@ -97,11 +97,11 @@ $config = [
             // send all mails to a file by default. You have to set
             // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.
-            'useFileTransport' => YII_ENV == 'dev' || YII_ENV == 'test' ? true : false,
+            'useFileTransport' => $_ENV['EMAIL_TO_FILE'],
             'transport' => require(__DIR__ . '/email.php')
         ],
         'log' => [
-            'traceLevel' => YII_DEBUG ? 3 : 0,
+            'traceLevel' => $_ENV['YII_DEBUG_LEVEL'],
             'targets' => [
                 [
                     'class' => 'yii\log\FileTarget',

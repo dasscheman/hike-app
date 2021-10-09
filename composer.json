@@ -29,7 +29,7 @@
         "kartik-v/yii2-editable": "*",
         "kartik-v/yii2-mpdf": "@dev",
         "kartik-v/yii2-nav-x": "*",
-        "prawee/yii2-widgets": "dev-master",
+        "prawee/yii2-widgets": "^1.0",
         "2amigos/qrcode-library" : "*",
         "2amigos/yii2-leaflet-extension" : "~1.0",
         "2amigos/yii2-leaflet-markercluster-plugin" : "1.0.0",
@@ -46,7 +46,8 @@
         "yiidoc/yii2-redactor": "@dev",
         "alexandernst/yii2-device-detect": "0.0.12",
         "aberkhout/rd-converter": "dev-master",
-        "2amigos/yii2-ckeditor-widget" : "~2.1"
+        "2amigos/yii2-ckeditor-widget" : "~2.1",
+        "vlucas/phpdotenv": "^5.3"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
