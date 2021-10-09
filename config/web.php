@@ -112,6 +112,7 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\Users',
             'enableAutoLogin' => true,
+            'enableRegistration' => $_ENV['ENABLE_REGISTRATION'],
             'authTimeout' => 86400,
          ]
     ],
