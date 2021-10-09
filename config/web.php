@@ -36,6 +36,7 @@ $config = [
             'mailer' => [
                 'sender' => ['noreply@hike-app.nl' => 'hike-app.nl'],
             ],
+            'enableRegistration' => $_ENV['ENABLE_REGISTRATION'],
             'admins' => ['dasman'],
             'debug' => $_ENV['YII_DEBUG'],
         ],
@@ -112,7 +113,6 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\Users',
             'enableAutoLogin' => true,
-            'enableRegistration' => $_ENV['ENABLE_REGISTRATION'],
             'authTimeout' => 86400,
          ]
     ],
