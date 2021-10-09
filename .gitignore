@@ -28,6 +28,3 @@ phpunit.phar
 
 tests/_output/*
 config/passwords.txt
-config/db.php
-config/email.php
-/config/keys.php
