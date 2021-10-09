@@ -53,7 +53,7 @@
         "yiisoft/yii2-debug": "~2.0.0",
         "yiisoft/yii2-gii": "~2.0.0",
         "yiisoft/yii2-faker": "~2.0.0",
-        "codeception/codeception": "^2.4",
+        "codeception/codeception": "^3.1",
         "codeception/specify": "^1.0",
         "codeception/verify": "^1.0",
         "codeception/base": "^2.2.3",
