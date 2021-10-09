@@ -86,7 +86,7 @@ class SiteController extends Controller
             ],
             'captcha' => [
                 'class' => 'yii\captcha\CaptchaAction',
-                'fixedVerifyCode' => $_ENV['YII_ENV'] == 'dev ? 'testme' : null,
+                'fixedVerifyCode' => $_ENV['YII_ENV'] == 'dev' ? 'testme' : null,
             ],
         ];
     }
